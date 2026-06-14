@@ -11,3 +11,6 @@ func _on_source_pressed():
 
 func _on_vol_value_changed(value): #due to how the slider is set up, we can assume value is between 0 and 1
 	AudioServer.set_bus_volume_linear(0,value) #sets the volume based on 0, 1, and any number inbetween.
+
+func _ready():
+	AudioServer.set_bus_volume_linear(0,0)
