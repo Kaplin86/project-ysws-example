@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://c38asrbcrtc4i"]
+
+[ext_resource type="Script" uid="uid://du1n37ydwq1kn" path="res://scripts/game.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cgtrkjp0wgpyf" path="res://scenes/gameplay/brick.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cd1lv2tmm7api" path="res://scenes/gameplay/paddle.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://krpbo2hb54j3" path="res://scenes/gameplay/ball.tscn" id="3_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(10, 686)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(24.000053, 1182)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1bvp3")
+nextLevel = "res://scenes/gameplay/levels/level2.tscn"
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="Brick" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(64, 32)
+
+[node name="Brick2" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(192, 32)
+
+[node name="Brick6" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(128, 96)
+
+[node name="Brick7" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(1024, 96)
+
+[node name="Brick8" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(448, 32)
+
+[node name="Brick9" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(576, 96)
+
+[node name="Brick10" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(704, 32)
+
+[node name="Brick11" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(832, 160)
+
+[node name="Brick12" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(896, 224)
+
+[node name="Brick13" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(768, 224)
+
+[node name="Brick14" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(320, 160)
+
+[node name="Brick15" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(384, 224)
+
+[node name="Brick16" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(256, 224)
+
+[node name="Brick3" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(576, 32)
+
+[node name="Brick4" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(1088, 32)
+
+[node name="Brick5" parent="Bricks" instance=ExtResource("1_ig7tw")]
+position = Vector2(960, 32)
+
+[node name="Paddle" parent="." instance=ExtResource("2_0xm2m")]
+modulate = Color(1, 0.46666667, 0.2, 1)
+position = Vector2(577, 605)
+movementSpeed = 700
+
+[node name="Ball" parent="." instance=ExtResource("3_h2yge")]
+modulate = Color(1, 0.7411765, 0.36078432, 1)
+position = Vector2(573, 361)
+movementSpeed = 1000
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-5, 333)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1158, 333)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, -15)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 924)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_1bvp3")

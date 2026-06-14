@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5nf0jyvfty3p"]
+
+[ext_resource type="Texture2D" uid="uid://bljfvsr7ynitc" path="res://assets/logoAutumnbreakout.png" id="1_rk22q"]
+[ext_resource type="Script" uid="uid://2lvkwp76kdge" path="res://scripts/main_menu.gd" id="1_u4kki"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4kki")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 302.0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_rk22q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 400.0
+offset_right = 713.0
+offset_bottom = 624.0
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Source" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SEE SOURCE CODE"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Volume Slider:"
+
+[node name="Vol" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Source" to="." method="_on_source_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Vol" to="." method="_on_vol_value_changed"]
