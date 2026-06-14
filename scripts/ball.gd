@@ -17,19 +17,19 @@ func _process(delta):
 				
 				if collider.hp > 0: # If the collider isnt glass (glass has a starting hp of 0)
 					velocity = velocity.bounce(collision.get_normal()) # Change the velocity 
-          createAndPlaySound("res://assets/sfx/bounce.wav")
-          
+			createAndPlaySound("res://assets/sfx/bounce.wav")
+		  
 				
-				collider.hp -= 1 # Decrease hp by one
+			collider.hp -= 1 # Decrease hp by one
 				
-				if collider.hp <= 0: # If the brick's hp is 0 (or less)
-					
-					collider.queue_free() # Delete the brick
-          createAndPlaySound("res://assets/sfx/hit.wav")
+			if collider.hp <= 0: # If the brick's hp is 0 (or less)
+				
+				collider.queue_free() # Delete the brick
+				createAndPlaySound("res://assets/sfx/hit.wav")
 		else:
 			# change velocity if we collide with anything non-brick
 			velocity = velocity.bounce(collision.get_normal()) # Change the velocity
-      createAndPlaySound("res://assets/sfx/bounce.wav")
+			createAndPlaySound("res://assets/sfx/bounce.wav")
 
 
 func createAndPlaySound(path : String): #takes a string input (a filepath) and plays the sound.
