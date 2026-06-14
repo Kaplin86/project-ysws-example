@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bisuimcjkdwnp"]
+
+[ext_resource type="Script" uid="uid://bucvlr1ubkj6c" path="res://scripts/colorless_brick.gd" id="1_8nedy"]
+[ext_resource type="Texture2D" uid="uid://c5xxg685c3qhp" path="res://assets/brick.png" id="2_yjgtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awxk8"]
+size = Vector2(202.36694, 106)
+
+[node name="Brick" type="RigidBody2D" groups=["bricks"]]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_8nedy")
+hp = 3
+
+[node name="Brick" type="Sprite2D" parent="."]
+modulate = Color(0, 0.2068603, 0.20821103, 1)
+scale = Vector2(0.38671204, 0.38671204)
+texture = ExtResource("2_yjgtr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5000024, 1)
+scale = Vector2(0.43979514, 0.307357)
+shape = SubResource("RectangleShape2D_awxk8")
